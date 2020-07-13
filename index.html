@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vegan Omega 3 Supplement - Plant Based DHA & EPA Fatty Acids Alternative to Fish Oil - Supports Heart, Brain, Joint Health - Sustainably Sourced from Algae. Fish Oil Free for Men & Women - 60 Softgels </title>
+<meta name="description" content="Carillas Snap-on Smile">
+  <meta property="og:title" content="Snap-On Smile"/>
+  <meta property="og:description" content="Carillas"/>
+  <meta property="og:image" content="https://i.imgur.com/BxddzTN.png"/>
+  <meta property="og:type" content="website"/>
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/main.css" type="text/css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/lt_landing_script.js"></script>
+
+<!-- LT code insertion -->
+<!-- /LT code insertion -->
+</head>
+<body class="">
+<section class="head-block-v1">
+  <div class="wrap">
+    <div class="container clearfix">
+      <h1 class="main-title"><b>Vegan Omega 3 Supplement - Plant Based DHA & EPA Fatty Acids Alternative to Fish Oil - Supports Heart, Brain, Joint Health - Sustainably Sourced from Algae. Fish Oil Free for Men & Women - 60 Softgels </b> <span>Regálese una sonrisa <br>perfecta en un instante!</span></h1>
+      <ul class="list-type-v1">
+        <li>Vegan Omega 3 Supplement - Plant Based DHA & EPA Fatty Acids Alternative to Fish Oil - Supports Heart, Brain, Joint Health - Sustainably Sourced from Algae. Fish Oil Free for Men & Women - 60 Softgels </li>
+      </ul>
+      <div class="sale"> La oferta <br>es por <br>1 día </div>
+      <div class="main-form">
+        <div class="cost-cont clearfix">
+          <div class="old-cost"> <span class="sale-label">Promoción!</span> <s class="oldproductsum">98 euro</s> </div>
+          <div class="new-cost">Precio de hoy: <strong class="productsum">49 euro</strong> </div>
+        </div>
+        <form class="m1-form order-form" method="post" geo="es" action="api.php" 
+	onsubmit="return validate_form(this, 'Por favor ingrese un número de teléfono válido');">		
+          <div>
+            <input name="name" value="" placeholder="Introduzca su nombre" required="" type="text">
+          </div>
+          <div>
+            <input name="phone" value="" placeholder="Introduzca su teléfono" required="" type="tel">
+          </div>
+			<div class="reolader">
+				<button class="mm_button button-m">ORDENE AHORA</button>
+			</div>
+			<input name="subid" type="hidden" value="{subid}">
+			<input name="flow_id" type="hidden" value="{flow_id}">
+			<input name="pixel" type="hidden" value="{pixel}">
+			<input name="user_id" type="hidden" value="{user_id}">
+        </form>
+        <div class="main-reminder">Artículos que quedan en stock: <span>13</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="copyright"> 
+	<p style="font-size: small;">ForestLeaf, Calle de Ayala, 17, 28001 Madrid, Spain
+		<br><a href="/privacypolicy" target="_blank">Privacy policy</a> 
+	<a href="/general-conditions-of-sale" target="_blank">General conditions of sale</a> 
+	  <a href="https://www.amazon.com/Vegan-Omega-Supplement-Alternative-Sustainably/dp/B07RH7N1MC" target="_blank">Legal warning</a>
+</section>
+<link rel="stylesheet" type="text/css" href="fonts/roboto.css">
+
+<script src="js/slick.js"></script> 
+<script src="js/init.js"></script>
+
+<script type="text/javascript" src="/libs/js/gdpr.js"></script>
+<link rel="stylesheet" href="/libs/js/gdpr.css">
+<script>
+    var phonePattern = {
+            'ru': '+7 (___) ___-__-__',
+            'ua': '+38-___-___-__-__',
+            'by': '+375 ___ ___ ___',
+            'kz': '+7 ___ ___ ____',
+            'kg': '+___ ___ __ __ __',
+            'md': '0 ___ _____',
+            'az': '+___-__-___-__-__',
+            'ge': '+995 ___ __ __ __',
+            'es': '+34 ___ __ __ __',
+            'it': '+39-___-___-____',
+            'esp': '+34 ___ __ __ __',
+            'pt': '+351 ___ ___ ___',
+            'prt': '+351 ___ ___ ___',
+            'id': '+62 ___ ___ ___',
+            'gr': '+30 ___ _______',
+            'cy': '+357 __ ______',
+            'ro': '+40 ___ ___ ___? _',
+            'bg': '+359 ___ __ ___? _',
+            'cz': '+420 ___ ___ ___',
+            'sk': '+421 ___ ___ ___'
+            /* --- */
+        },
+        forms = document.getElementsByClassName('order-form'),
+        inputs = [];
+    for(let form of forms)
+        inputs.push(form.querySelector('input[name="phone"]'));
+
+    //функция на проверку соответствия количества введенных в инпут символов, количеству необходимых в маске
+    function validate_form(form, alert_text = "Please enter valid phone number") {
+        var input_ln = form.querySelector('input[name="phone"]').value.replace(/ /g, '').length,
+            pattern_ln = phonePattern[form.getAttribute('geo')].replace(/\?| /g, '').length;
+        if (input_ln>=pattern_ln) return true;
+        else { alert(alert_text); return false;}
+    }
+
+    //сама маска, срабатывающая от ивентов ввода, фокуса, потери фокуса и нажатия кнопки мыши
+    document.addEventListener("DOMContentLoaded", function() {
+
+        function mask(event) {
+
+            var input = event.currentTarget,
+                geo = input.form.getAttribute('geo'),
+                matrix = phonePattern[geo],
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = input.value.replace(/\D/g, "");
+            if (def.length >= val.length) val = def;
+            if (!(/_|\?|-|\(\)/.test(matrix[input.selectionStart])))
+                input.selectionStart = input.value.length;
+
+            input.value = matrix.replace(/./g, function (a) {
+                return /[_|?\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+            });
+            if (event.type == "blur") {
+                if (input.value.length == 2) input.value = ""
+            }
+        };
+
+        for (const input of inputs) {
+            input.addEventListener("input", (e) => mask(e), false);
+            input.addEventListener("focus", (e) => mask(e), false);
+            input.addEventListener("blur", (e) => mask(e), false);
+            input.addEventListener("mouseup", (e) => mask(e), false);
+        }
+    });
+
+    $(document).ready(function () {
+        // Load GDPR
+        $(document).gdprCookieLaw({
+            moreLinkHref: '/privacypolicy',
+            theme: 'theme-1',
+            position: 'bottom-right',
+            width: '760px',
+            margin: '15px',
+            animation: 'fade-slide',
+            btnAcceptText: 'Ok'
+        });
+    });
+</script>
+
+</html>
