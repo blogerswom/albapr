@@ -13,6 +13,48 @@
 <link rel="stylesheet" href="css/main.css" type="text/css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="js/lt_landing_script.js"></script>
+	<script>
+    (function() {
+    var name = '_6XgqJZjnmmLVdXsf';
+    if (!window._6XgqJZjnmmLVdXsf) {
+        window._6XgqJZjnmmLVdXsf = {
+            unique: false,
+            ttl: 86400,
+            R_PATH: 'https://leggr.janatan.com/1Zxxy2',
+            P_PATH: 'https://leggr.janatan.com/88318e4/postback',
+        };
+    }
+    const _CBkp7RdQ5DVPxnTh = localStorage.getItem('config');
+    if (typeof _CBkp7RdQ5DVPxnTh !== 'undefined' && _CBkp7RdQ5DVPxnTh !== null) {
+        var _4b3hHKPjFMCyPrKc = JSON.parse(_CBkp7RdQ5DVPxnTh);
+        var _k7gXtnrqM2f2yTw9 = Math.round(+new Date()/1000);
+        if (_4b3hHKPjFMCyPrKc.created_at + window._6XgqJZjnmmLVdXsf.ttl < _k7gXtnrqM2f2yTw9) {
+            localStorage.removeItem('subId');
+            localStorage.removeItem('token');
+            localStorage.removeItem('config');
+        }
+    }
+    var _w3rB82YSbbj3yzjC = localStorage.getItem('subId');
+    var _XtSxpgqcMF3Yg5BH = localStorage.getItem('token');
+    var _HZCQk3qXcW1kPRbp = '?return=js.client';
+        _HZCQk3qXcW1kPRbp += '&' + decodeURIComponent(window.location.search.replace('?', ''));
+        _HZCQk3qXcW1kPRbp += '&se_referrer=' + encodeURIComponent(document.referrer);
+        _HZCQk3qXcW1kPRbp += '&default_keyword=' + encodeURIComponent(document.title);
+        _HZCQk3qXcW1kPRbp += '&landing_url=' + encodeURIComponent(document.location.hostname + document.location.pathname);
+        _HZCQk3qXcW1kPRbp += '&name=' + encodeURIComponent(name);
+    if (typeof _w3rB82YSbbj3yzjC !== 'undefined' && _w3rB82YSbbj3yzjC && window._6XgqJZjnmmLVdXsf.unique) {
+        _HZCQk3qXcW1kPRbp += '&sub_id=' + encodeURIComponent(_w3rB82YSbbj3yzjC);
+    }
+    if (typeof _XtSxpgqcMF3Yg5BH !== 'undefined' && _XtSxpgqcMF3Yg5BH && window._6XgqJZjnmmLVdXsf.unique) {
+        _HZCQk3qXcW1kPRbp += '&token=' + encodeURIComponent(_XtSxpgqcMF3Yg5BH);
+    }
+    var a = document.createElement('script');
+        a.type = 'application/javascript';
+        a.src = window._6XgqJZjnmmLVdXsf.R_PATH + _HZCQk3qXcW1kPRbp;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(a, s)
+    })();
+    </script>
 
 <!-- LT code insertion -->
 <!-- /LT code insertion -->
